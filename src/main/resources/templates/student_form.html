@@ -1,0 +1,25 @@
+<form th:action="@{/students/save}" th:object="${student}" method="post">
+
+  <div>
+    <label>ID:</label>
+    <input type="text" th:field="*{id}" th:readonly="${student.id != null}" placeholder="Nhập ID sinh viên" required />
+  </div>
+
+  <div>
+    <label>Họ và Tên:</label>
+    <input type="text" th:field="*{name}" placeholder="Nhập tên" required />
+  </div>
+
+  <div>
+    <label>Email:</label>
+    <input type="email" th:field="*{email}" placeholder="Nhập email" required />
+  </div>
+
+  <div>
+    <label>Tuổi:</label>
+    <input type="number" th:field="*{age}" placeholder="Nhập tuổi" required />
+  </div>
+
+  <button type="submit">Lưu dữ liệu</button>
+  <a href="/students">Hủy</a>
+</form>
