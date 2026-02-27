@@ -21,6 +21,11 @@ public class StudentWebController {
     @Autowired
     private StudentService service;
 
+    @GetMapping("/")
+    public String index() {
+        return "redirect:/students";
+    }
+
     @GetMapping
     public String getAllStudents(
             @RequestParam(required = false) String keyword,
